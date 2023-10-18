@@ -24,6 +24,8 @@ class FloatingSearchBarScrollNotifier extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final devicePixelRatio = MediaQuery.of(context).devicePixelRatio;
+
     return NotificationListener<ScrollNotification>(
       onNotification: (notification) {
         ScrollMetrics metrics = notification.metrics;
@@ -41,6 +43,7 @@ class FloatingSearchBarScrollNotifier extends StatelessWidget {
               maxScrollExtent: metrics.maxScrollExtent,
               minScrollExtent: metrics.minScrollExtent,
               viewportDimension: metrics.viewportDimension,
+              devicePixelRatio: devicePixelRatio,
             );
           }
 
